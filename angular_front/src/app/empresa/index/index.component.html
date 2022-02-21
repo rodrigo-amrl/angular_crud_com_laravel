@@ -1,0 +1,40 @@
+<ng-container>
+  <div class="card text-center text-dark bg-light mb-3 ">
+    <div class="card-header card-d">
+      <a href="#" routerLink="/empresa/create/" class="btn btn-success float-end"><i class="fa fa-plus"> </i> Nova
+        Empresa</a>
+
+      <h5 class="card-title">Lista de Empresa</h5>
+      <p class="card-text">Navegue pela lista de empresa.</p>
+    </div>
+    <div class="card-body">
+
+      <table class="table table-striped">
+        <tr>
+          <th>Id</th>
+          <th>Nome</th>
+          <th>CNPJ</th>
+          <th>Criado Em</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor="let empresa of empresas">
+          <td>{{ empresa.id }}</td>
+          <td>{{ empresa.nome }}</td>
+          <td>{{ empresa.cnpj }}</td>
+          <td>{{empresa.created_at | date:'d/MM/Y' }}</td>
+          <td>
+            <div class="d-grid gap-2 d-md-block">
+              <a class="btn btn-secondary ms-1" href="#" [routerLink]="['/empresa/', empresa.id, 'edit']"><i
+                  class="fa fa-edit"></i></a>
+              <button type="button" (click)="deletePost(empresa.id)" class="btn btn-danger ms-1"><i
+                  class="fa fa-trash"></i></button>
+            </div>
+
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="card-footer text-muted">
+    </div>
+  </div>
+</ng-container>

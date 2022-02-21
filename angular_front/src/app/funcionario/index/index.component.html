@@ -1,0 +1,40 @@
+<ng-container>
+  <div class="card text-center text-dark bg-light mb-3 ">
+    <div class="card-header card-d">
+      <a href="#" routerLink="/funcionario/create/" class="btn btn-success float-end"><i class="fa fa-plus"> </i> Novo
+        Funcionario</a>
+
+      <h5 class="card-title">Lista de Funcionario</h5>
+      <p class="card-text">Navegue pela lista de funcionario.</p>
+    </div>
+    <div class="card-body">
+
+      <table class="table table-striped">
+        <tr>
+          <th>Id</th>
+          <th>Nome</th>
+          <th>CPF</th>
+          <th>Criado Em</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor="let funcionario of funcionarios">
+          <td>{{ funcionario.id }}</td>
+          <td>{{ funcionario.nome }}</td>
+          <td>{{ funcionario.cpf }}</td>
+          <td>{{funcionario.created_at | date:'d/MM/Y' }}</td>
+          <td>
+            <div class="d-grid gap-2 d-md-block">
+              <a class="btn btn-secondary ms-1" href="#" [routerLink]="['/funcionario/', funcionario.id, 'edit']"><i
+                  class="fa fa-edit"></i></a>
+              <button type="button" (click)="deletePost(funcionario.id)" class="btn btn-danger ms-1"><i
+                  class="fa fa-trash"></i></button>
+            </div>
+
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="card-footer text-muted">
+    </div>
+  </div>
+</ng-container>

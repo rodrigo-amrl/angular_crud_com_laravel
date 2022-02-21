@@ -1,0 +1,19 @@
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+  <header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0"> CRUD Angular</h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link " href="#" [routerLink]="['/']">Home</a>
+        <a class="nav-link" href="#" [routerLink]="['/cliente/']">Clientes</a>
+        <a class="nav-link" href="#" [routerLink]="['/empresa/']">Empresas</a>
+        <a class="nav-link" href="#" [routerLink]="['/funcionario/']">Funcionários</a>
+      </nav>
+    </div>
+  </header>
+</div>
+
+
+<main class="px-3">
+  <router-outlet></router-outlet>
+</main>

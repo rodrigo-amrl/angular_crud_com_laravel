@@ -1,0 +1,66 @@
+<div class="container">
+
+
+  <h1>Novo Funcionário </h1>
+
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+    <div class="row justify-content-center">
+      <div class=" col-md-3">
+        <label for="nome">Nome:</label>
+        <input formControlName="nome" id="nome" type="text" class="form-control">
+        <div *ngIf="f['nome'].touched && f['nome'].invalid" class="alert alert-danger">
+          <div *ngIf="f['nome'].errors && f['nome'].errors['required']">Nome é Obrigatório.</div>
+        </div>
+      </div>
+      <div class=" col-md-3">
+        <label for="cpf">CPF:</label>
+        <input formControlName="cpf" id="cpf" type="text" class="form-control">
+        <div *ngIf="f['cpf'].touched && f['cpf'].invalid" class="alert alert-danger">
+          <div *ngIf="f['cpf'].errors && f['cpf'].errors['required']">CPF é Obrigatório.</div>
+          <div *ngIf="f['cpf'].errors && f['cpf'].errors['pattern']">CPF é Invalido  (Não utilize pontuação)</div>
+
+        </div>
+      </div>
+
+    </div>
+    <div class="row justify-content-center mt-2">
+
+      <div class=" col-md-6">
+        <label for="endereco">Endereço:</label>
+        <input formControlName="endereco" id="endereco" type="text" class="form-control">
+        <div *ngIf="f['endereco'].touched && f['endereco'].invalid" class="alert alert-danger">
+          <div *ngIf="f['endereco'].errors && f['endereco'].errors['required']">Endereço é Obrigatório.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-2">
+      <div class=" col-md-3">
+        <label for="nome">Login:</label>
+        <input formControlName="login" id="login" type="text" class="form-control">
+        <div *ngIf="f['login'].touched && f['login'].invalid" class="alert alert-danger">
+          <div *ngIf="f['login'].errors && f['login'].errors['required']">Login é Obrigatório.</div>
+          <div *ngIf="f['login'].errors && f['login'].errors['pattern']">Login é Invalido (Não utilize acentos)</div>
+
+        </div>
+      </div>
+      <div class=" col-md-3">
+        <label for="cpf">Senha:</label>
+        <input formControlName="senha" id="senha" type="password" class="form-control">
+        <div *ngIf="f['senha'].touched && f['senha'].invalid" class="alert alert-danger">
+          <div *ngIf="f['senha'].errors && f['senha'].errors['required']">Senha é Obrigatória.</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-12">
+        <a href="#" routerLink="/funcionario/index" class="btn btn-primary ">Voltar</a>
+        <button class="btn btn-success ms-2" type="submit" [disabled]="!form.valid">Salvar</button>
+      </div>
+    </div>
+
+  </form>
+</div>

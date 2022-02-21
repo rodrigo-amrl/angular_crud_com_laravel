@@ -1,0 +1,37 @@
+<ng-container>
+  <div class="card text-center text-dark bg-light mb-3 ">
+    <div class="card-header card-d">
+      <a href="#" routerLink="/cliente/create/" class="btn btn-success float-end"><i class="fa fa-plus"> </i> Novo Cliente</a>
+
+      <h5 class="card-title">Lista de Cliente</h5>
+      <p class="card-text">Navegue pela lista de cliente.</p>
+    </div>
+    <div class="card-body">
+
+      <table class="table table-striped">
+        <tr>
+          <th>Id</th>
+          <th>Nome</th>
+          <th>CPF</th>
+          <th>Criado Em</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor="let cliente of clientes">
+          <td>{{ cliente.id }}</td>
+          <td>{{ cliente.nome }}</td>
+          <td>{{ cliente.cpf }}</td>
+          <td>{{cliente.created_at | date:'d/MM/Y'  }}</td>
+          <td>
+            <div class="d-grid gap-2 d-md-block">
+              <a class="btn btn-secondary ms-1"  href="#" [routerLink]="['/cliente/', cliente.id, 'edit']"><i class="fa fa-edit"></i></a>
+              <button type="button" (click)="deletePost(cliente.id)" class="btn btn-danger ms-1"><i class="fa fa-trash"></i></button>
+            </div>
+
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="card-footer text-muted">
+    </div>
+  </div>
+</ng-container>
