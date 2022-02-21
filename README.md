@@ -15,16 +15,19 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 # Acesse o terminal/cmd e navegue até a pasta laravel_api e execute o comando
 $ composer install
 
-# Na raiz do projeto, encontre o arquivo .env e inclua as configurações do banco de dados, e para criar as tabelas do projeto execute o comando no cmd:
+# Na raiz do projeto, encontre o arquivo .env e inclua as configurações do banco de dados, 
+e para criar as tabelas do projeto execute o comando no cmd:
 $ php artisan migrate
 
 # Com as tabelas já criadas, agora só rodar o servidor com o comando:
 $  php -S localhost:8000 -t public
 
-# O servidor inciará na porta:8000 - acesse <http://localhost:8000>, qualquer dúvida pode consultar a documentação do lumen: https://lumen.laravel.com/docs/9.x
+# O servidor inciará na porta:8000 - acesse <http://localhost:8000>, 
+qualquer dúvida pode consultar a documentação do lumen: https://lumen.laravel.com/docs/9.x
+```
 
 ### 🎲 Rodando o Front End 
-```
+
 ```bash
 # Acesse o terminal/cmd e navegue até a pasta angular_front e execute o comando
 $ npm install
@@ -32,4 +35,5 @@ $ npm install
 # Com as dependências instaladas, agora é só executar o comando:
 $  ng serve
 
-# O site inciará na porta:4200 - acesse <http://localhost:4200>, qualquer dúvida pode consultar a documentação do angular: https://angular.io/docs
+# O site inciará na porta:4200 - acesse <http://localhost:4200>,
+qualquer dúvida pode consultar a documentação do angular: https://angular.io/docs
