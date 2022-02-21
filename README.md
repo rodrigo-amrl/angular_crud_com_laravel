@@ -1,5 +1,5 @@
 <h1 align="center">
-    <a href="https://pt-br.reactjs.org/">🔗 Crud Angular com Laravel</a>
+    <a href="https://pt-br.reactjs.org/">🔗 CRUD Angular com Laravel</a>
 </h1>
 <p align="center">🚀 Exemplo de um projeto, utilizando o laravel 9 (lúmen) como API back end, e utilizando o angular 13 como front end.</p>
 
