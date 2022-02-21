@@ -19,7 +19,7 @@
         <input formControlName="cpf" id="cpf" type="text" class="form-control">
         <div *ngIf="f['cpf'].touched && f['cpf'].invalid" class="alert alert-danger">
           <div *ngIf="f['cpf'].errors && f['cpf'].errors['required']">CPF é Obrigatório.</div>
-          <div *ngIf="f['cpf'].errors && f['cpf'].errors['pattern']">CPF é Invalido  (Não utilize pontuação)</div>
+          <div *ngIf="f['cpf'].errors && f['cpf'].errors['pattern']">CPF é Invalido (Não utilize pontuação)</div>
         </div>
       </div>
 
@@ -34,12 +34,11 @@
         </div>
       </div>
       <div class=" col-md-3">
-        <label for="endereco">Selecione as empresas:</label>
-
-        <ng-select [items]="people$ | async" bindLabel="name" [addTag]="true" [multiple]="true" [hideSelected]="true"
-          [trackByFn]="trackByFn" [minTermLength]="2" [loading]="peopleLoading"
-          typeToSearchText="Please enter 2 or more characters" [typeahead]="peopleInput$" [(ngModel)]="selectedPersons">
-        </ng-select>
+        <label for="endereco">Faça upload de um documento:</label>
+        <input formControlName="file" id="file" type="file" class="form-control" (change)="onFileChange($event)">
+        <div *ngIf="f['file'].touched && f['file'].invalid" class="alert alert-danger">
+          <div *ngIf="f['file'].errors && f['file'].errors['required']">O documento é obrigatório.</div>
+        </div>
         <br>
 
       </div>

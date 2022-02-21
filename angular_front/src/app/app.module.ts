@@ -22,6 +22,9 @@ import { ToastrModule } from 'ngx-toastr';
 
 
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -29,6 +32,8 @@ import { ToastrModule } from 'ngx-toastr';
   imports: [
     BrowserModule,
     NgMultiSelectDropDownModule.forRoot(),
+    BrowserModule,
+    ToastrModule.forRoot(),
     NgSelectModule,
     AppRoutingModule,
     ClienteModule,
