@@ -24,7 +24,7 @@ $  php -S localhost:8000 -t public
 # O servidor inciará na porta:8000 - acesse <http://localhost:8000>, qualquer dúvida pode consultar a documentação do lumen: https://lumen.laravel.com/docs/9.x
 
 ### 🎲 Rodando o Front End 
-
+```
 ```bash
 # Acesse o terminal/cmd e navegue até a pasta angular_front e execute o comando
 $ npm install
