@@ -19,6 +19,9 @@ $ composer install
 e para criar as tabelas do projeto execute o comando no cmd:
 $ php artisan migrate
 
+# Para popular as informações nas tabelas execute o comando no cmd:
+$ php artisan db:seed
+
 # Com as tabelas já criadas, agora só rodar o servidor com o comando:
 $  php -S localhost:8000 -t public
 
