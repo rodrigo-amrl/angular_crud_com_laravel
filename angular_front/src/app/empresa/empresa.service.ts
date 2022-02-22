@@ -64,6 +64,7 @@ export class EmpresaService {
       )
   }
 
+
   /**
    * Write code on Method
    *
@@ -71,6 +72,19 @@ export class EmpresaService {
    */
   delete(id: number) {
     return this.httpClient.delete(this.apiURL + '/empresas/' + id, this.httpOptions)
+
+      .pipe(
+        catchError(this.errorHandler)
+      )
+  }
+  /**
+ * Write code on Method
+ *
+ * @return response()
+ */
+  addCliente(id: number, empresa: Empresa): Observable<any> {
+
+    return this.httpClient.put(this.apiURL + '/empresas/add_cliente/' + id, JSON.stringify(empresa), this.httpOptions)
 
       .pipe(
         catchError(this.errorHandler)

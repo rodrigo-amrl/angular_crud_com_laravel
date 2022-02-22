@@ -1,0 +1,35 @@
+<div class="container">
+
+
+  <h1>Vincular cliente a empresa {{empresa.nome}}</h1>
+
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+    <div class="row justify-content-center">
+      <div class=" col-md-6">
+        <label for="nome">Cliente:</label>
+        <ng-select  formControlName="cliente" id="cliente" class="form-control" [items]="clientes"
+         placeholder="Selecione o cliente.."
+        bindLabel="nome" autofocus bindValue="id">
+        </ng-select>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class=" col-md-6">
+        <label for="doc">Documento de Identificação:</label>
+        <input formControlName="doc" id="doc" class="form-control" type="file" name="doc" ng2FileSelect  accept="image/x-png,image/gif,image/jpeg,x-pdf" />
+        <div *ngIf="f['doc'].touched && f['doc'].invalid" class="alert alert-danger">
+          <div *ngIf="f['doc'].errors && f['doc'].errors['required']">O documento é Obrigatório.</div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-12">
+        <a href="#" [routerLink]="['/empresa/', empresa.id, 'edit']" class="btn btn-primary ">Voltar</a>
+        <button class="btn btn-success ms-2" type="submit" [disabled]="!form.valid">Salvar</button>
+      </div>
+    </div>
+
+  </form>
+</div>

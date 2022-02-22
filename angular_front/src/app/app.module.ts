@@ -17,6 +17,9 @@ import { NgSelectModule } from '@ng-select/ng-select';
 
 import { ToastrModule } from 'ngx-toastr';
 
+import { FileUploadModule } from 'ng2-file-upload';
+
+
 
 
 
@@ -41,7 +44,8 @@ import { ToastrModule } from 'ngx-toastr';
     EmpresaModule,
     HttpClientModule,
     InputMaskModule,
-    FormsModule
+    FormsModule,
+    FileUploadModule
   ],
   providers: [],
   bootstrap: [AppComponent]

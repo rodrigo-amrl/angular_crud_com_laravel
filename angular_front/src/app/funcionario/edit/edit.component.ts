@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FuncionarioService } from '../funcionario.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Funcionario } from '../funcionario';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-edit',
@@ -23,7 +25,9 @@ export class EditComponent implements OnInit {
   constructor(
     public funcionarioService: FuncionarioService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
+
   ) { }
 
   /**
@@ -34,7 +38,9 @@ export class EditComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['funcionarioId'];
     this.funcionarioService.find(this.id).subscribe((data: Funcionario) => {
+
       this.funcionario = data;
+
     });
 
     this.form = new FormGroup({
@@ -64,6 +70,8 @@ export class EditComponent implements OnInit {
     console.log(this.form.value);
     this.funcionarioService.update(this.id, this.form.value).subscribe((res: any) => {
       this.router.navigateByUrl('funcionario/index');
+      this.toastr.success("Funcionário Editado",'Sucesso!');
+
     })
   }
 

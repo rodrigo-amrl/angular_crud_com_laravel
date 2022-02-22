@@ -9,17 +9,17 @@
     <div class="row justify-content-center">
       <div class=" col-md-3">
         <label for="nome">Nome:</label>
-        <input formControlName="nome" id="nome" type="text"  [(ngModel)]="cliente.nome" class="form-control">
+        <input formControlName="nome" id="nome" type="text" [(ngModel)]="cliente.nome" class="form-control">
         <div *ngIf="f['nome'].touched && f['nome'].invalid" class="alert alert-danger">
           <div *ngIf="f['nome'].errors && f['nome'].errors['required']">Nome é Obrigatório.</div>
         </div>
       </div>
       <div class=" col-md-3">
         <label for="cpf">CPF:</label>
-        <input formControlName="cpf" [(ngModel)]="cliente.cpf"  id="cpf" type="text" class="form-control">
+        <input formControlName="cpf" [(ngModel)]="cliente.cpf" id="cpf" type="text" class="form-control">
         <div *ngIf="f['cpf'].touched && f['cpf'].invalid" class="alert alert-danger">
           <div *ngIf="f['cpf'].errors && f['cpf'].errors['required']">CPF é Obrigatório.</div>
-          <div *ngIf="f['cpf'].errors && f['cpf'].errors['pattern']">CPF é Invalido  (Não utilize pontuação)</div>
+          <div *ngIf="f['cpf'].errors && f['cpf'].errors['pattern']">CPF é Invalido (Não utilize pontuação)</div>
 
         </div>
       </div>
@@ -29,7 +29,7 @@
 
       <div class=" col-md-6">
         <label for="endereco">Endereço:</label>
-        <input formControlName="endereco"  [(ngModel)]="cliente.endereco" id="endereco" type="text" class="form-control">
+        <input formControlName="endereco" [(ngModel)]="cliente.endereco" id="endereco" type="text" class="form-control">
         <div *ngIf="f['endereco'].touched && f['endereco'].invalid" class="alert alert-danger">
           <div *ngIf="f['endereco'].errors && f['endereco'].errors['required']">Endereço é Obrigatório.</div>
         </div>
@@ -39,7 +39,7 @@
     <div class="row justify-content-center mt-2">
       <div class=" col-md-3">
         <label for="nome">Login:</label>
-        <input formControlName="login"  [(ngModel)]="cliente.login" id="login" type="text" class="form-control">
+        <input formControlName="login" [(ngModel)]="cliente.login" id="login" type="text" class="form-control">
         <div *ngIf="f['login'].touched && f['login'].invalid" class="alert alert-danger">
           <div *ngIf="f['login'].errors && f['login'].errors['required']">Login é Obrigatório.</div>
           <div *ngIf="f['login'].errors && f['login'].errors['pattern']">Login é Invalido (Não utilize acentos)</div>
@@ -48,7 +48,7 @@
       </div>
       <div class=" col-md-3">
         <label for="cpf">|Atualizar Senha</label>
-        <input formControlName="senha"  id="senha" type="password" class="form-control">
+        <input formControlName="senha" id="senha" type="password" class="form-control">
         <div *ngIf="f['senha'].touched && f['senha'].invalid" class="alert alert-danger">
           <div *ngIf="f['senha'].errors && f['senha'].errors['required']">Senha é Obrigatória.</div>
         </div>
@@ -64,3 +64,33 @@
 
   </form>
 </div>
+<ng-container>
+  <div class="row justify-content-center">
+    <div class="card text-center text-dark bg-light mb-3 mt-3  col-md-8">
+      <div class="card-header card-d">
+        <h5 class="card-title">Empresas Vinculadas ao {{cliente.nome}}</h5>
+        <p class="card-text">Navegue pela lista de empresa.</p>
+      </div>
+      <div class="card-body">
+
+        <table class="table table-striped">
+          <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>CNPJ</th>
+            <th>Criado Em</th>
+          </tr>
+          <tr *ngFor="let empresa of cliente.empresas">
+            <td>{{ empresa.id }}</td>
+            <td>{{ empresa.nome }}</td>
+            <td>{{ empresa.cnpj }}</td>
+            <td>{{empresa.created_at | date:'d/MM/Y' }}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="card-footer text-muted">
+      </div>
+    </div>
+  </div>
+
+</ng-container>

@@ -7,8 +7,11 @@ import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { FileSelectDirective } from 'ng2-file-upload';
 import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+
+
 
 
 
@@ -24,7 +27,11 @@ import { ToastrModule } from 'ngx-toastr';
     NgSelectModule,
     FormsModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    BrowserModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgSelectModule,
   ]
 })
 export class ClienteModule { }

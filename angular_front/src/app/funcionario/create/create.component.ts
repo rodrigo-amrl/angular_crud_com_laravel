@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FuncionarioService } from '../funcionario.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-create',
@@ -14,7 +15,9 @@ export class CreateComponent implements OnInit {
 
   constructor(
     public funcionarioService: FuncionarioService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
+
   ) { }
 
 
@@ -34,6 +37,8 @@ export class CreateComponent implements OnInit {
   submit() {
     this.funcionarioService.create(this.form.value).subscribe((res: any) => {
       this.router.navigateByUrl('funcionario/index');
+      this.toastr.success("Funcionário Criado",'Sucesso!');
+
     })
   }
 

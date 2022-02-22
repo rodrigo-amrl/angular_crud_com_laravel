@@ -26,22 +26,14 @@
     </div>
     <div class="row justify-content-center mt-2">
 
-      <div class=" col-md-3">
+      <div class=" col-md-6">
         <label for="endereco">Endereço:</label>
         <input formControlName="endereco" id="endereco" type="text" class="form-control">
         <div *ngIf="f['endereco'].touched && f['endereco'].invalid" class="alert alert-danger">
           <div *ngIf="f['endereco'].errors && f['endereco'].errors['required']">Endereço é Obrigatório.</div>
         </div>
       </div>
-      <div class=" col-md-3">
-        <label for="endereco">Faça upload de um documento:</label>
-        <input formControlName="file" id="file" type="file" class="form-control" (change)="onFileChange($event)">
-        <div *ngIf="f['file'].touched && f['file'].invalid" class="alert alert-danger">
-          <div *ngIf="f['file'].errors && f['file'].errors['required']">O documento é obrigatório.</div>
-        </div>
-        <br>
 
-      </div>
     </div>
 
     <div class="row justify-content-center mt-2">

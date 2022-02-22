@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { EmpresaService } from '../empresa.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-create',
@@ -14,7 +16,9 @@ export class CreateComponent implements OnInit {
 
   constructor(
     public empresaService: EmpresaService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
+
   ) { }
 
 
@@ -32,6 +36,8 @@ export class CreateComponent implements OnInit {
   submit(){
     this.empresaService.create(this.form.value).subscribe((res:any)=>{
       this.router.navigateByUrl('empresa/index');
+      this.toastr.success("Empresa Criada",'Sucesso!');
+
     })
   }
 
