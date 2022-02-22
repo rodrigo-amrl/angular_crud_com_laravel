@@ -6,7 +6,8 @@
 ### Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/), [Composer] (https://getcomposer.org/)
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/), [Composer](https://getcomposer.org/), [PHP 8](https://www.php.net/downloads.php),
+[Angular](https://www.npmjs.com/package/@angular/cli)
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
 ### 🎲 Rodando o Back End (servidor)
